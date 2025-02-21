@@ -1,26 +1,21 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
+<script setup>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+/* import all necessary views and components */
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+import { RouterView } from 'vue-router'
+
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+
+<template>
+
+    <!-- the header component to create the header of the website whose content will always be visible throughout all router-views (pages)-->
+
+    <!-- A div for the router-view which shows the content of the current route (its content changes as the user browses the website)-->
+    <div>
+        <router-view></router-view>
+    </div>
+
+    <!-- the footer component to create the footer of the website whose content will always be visible throughout all router-views (pages)-->
+
+</template>
