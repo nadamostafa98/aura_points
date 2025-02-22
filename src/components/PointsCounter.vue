@@ -1,12 +1,12 @@
 <template>
 <div class="container py-5">
     
-    <div class="d-flex justify-content-center align-self-center py-3">
+    <div class="d-flex justify-content-center align-self-center py-5">
         <div class="col">
             <div class="d-flex justify-content-center">
                 <h2>Sherif</h2>
             </div>
-            <div class="d-flex justify-content-center py-3">
+            <div class="d-flex justify-content-center py-5">
                 <button v-on:click="decSherif">
                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
                 </button>
@@ -20,7 +20,7 @@
             <div class="d-flex justify-content-center">
                 <h2>Nada</h2>
             </div>
-            <div class="d-flex justify-content-center py-3">
+            <div class="d-flex justify-content-center py-5">
                 <button v-on:click="decNada">
                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
                 </button>
@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="d-flex justify-content-center align-self-center py-3">
-        <button v-on:click="newWeek" style="border-radius: 0.5cm;" class="py-3 px-2">
+        <button v-on:click="newWeek" style="border-radius: 0.5cm; width:max-content ;" class="btn-lg py-3 px-2">
             Start a New Week
         </button>
     </div>
