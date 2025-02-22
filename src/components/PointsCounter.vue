@@ -1,5 +1,6 @@
 <template>
 <div class="container py-5">
+    
     <div class="d-flex justify-content-center align-self-center py-3">
         <div class="col">
             <div class="d-flex justify-content-center">
@@ -31,6 +32,11 @@
 
         </div>
     </div>
+    <div class="d-flex justify-content-center align-self-center py-3">
+        <button v-on:click="newWeek" style="border-radius: 0.5cm;" class="py-3 px-2">
+            Start a New Week
+        </button>
+    </div>
 </div>
 </template>
 <script>
@@ -39,18 +45,21 @@ export default {
     data(){
         let countSherif = this.$sherifCount;
         let countNada = this.$nadaCount;
+        const base = new Airtable({ apiKey: 'patYqGigP1h6wsxqD.b7759fb0e3e11f9e8eacfc3748b0ffcfaadc106f138ed31934039d327a40d3f1' }).base('appGNg3K0FqrSF4HP');
+
         return{
             countSherif,
-            countNada
+            countNada,
+            base
         }
     },
 
   methods: {
+
     updatedb(){
-        const base = new Airtable({ apiKey: 'patYqGigP1h6wsxqD.b7759fb0e3e11f9e8eacfc3748b0ffcfaadc106f138ed31934039d327a40d3f1' }).base('appGNg3K0FqrSF4HP');
 
 
-        base('mytable').update([
+        this.base('mytable').update([
   {
     "id": "recy4OgVgLgih6ndW",
     "fields": {
@@ -74,6 +83,13 @@ export default {
     console.log(record.get('name'));
   });
 });
+    },
+    newWeek(){
+        this.$sherifCount = 0;
+        this.countSherif = this.$sherifCount;
+        this.$nadaCount = 0;
+        this.countNada = this.$nadaCount;
+        this.updatedb();  
     },
     incSherif(){
         this.$sherifCount++;
@@ -105,6 +121,7 @@ h2{
     color:#42b983;    
 }
 button{
+    font-family: 'Poppins';
     background-color: #42b983;
     color: aliceblue;
     border: 0cap;
