@@ -11,7 +11,7 @@ import VueRouter from 'vue-router';
     {
       path: '/',
       name: 'homepage',
-      component: () => import('../components/HomePage.vue'),
+      component: () => import('../components/PointsCounter.vue'),
       props:true
     },
   ];
