@@ -8,8 +8,8 @@
 
 </script>
 <style>
-h1{
+h1 {
     font-family: 'Poppins';
-    color: aliceblue;    
+    color: aliceblue;
 }
 </style>
